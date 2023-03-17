@@ -4,7 +4,7 @@ import NavBar from './NavBar';
 const Layout = (props: any) => {
     const { children } = props;
     return (
-        <div style={{ backgroundColor: "salmon" }}>
+        <div>
             <NavBar/>
             {children}
         </div>
