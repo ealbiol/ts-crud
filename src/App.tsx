@@ -1,11 +1,9 @@
 import React from 'react';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import { Layout } from './layout/Layout';
-import './App.css';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Layout from './layout/Layout';
 import Posts from "./pages/Posts";
+import './App.css';
+
 
 const router = createBrowserRouter([
   {
@@ -23,8 +21,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <div>
-      <Layout />
-      <RouterProvider router={router} />
+      <Layout>
+        <RouterProvider router={router} />
+      </Layout>
     </div>
   );
 }

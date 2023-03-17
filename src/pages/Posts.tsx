@@ -6,7 +6,6 @@ export default function Posts() {
     const [posts, setPosts] = useState<Array<Post>>([])
 
     useEffect(() => {
-
         (async () => {
             try {
                 const response = await getPosts();
@@ -17,7 +16,6 @@ export default function Posts() {
 
             }
         })()
-
     }, [])
 
 

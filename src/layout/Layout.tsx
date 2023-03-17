@@ -1,7 +1,14 @@
 import React from 'react';
+import NavBar from './NavBar';
 
-export function Layout() {
+const Layout = (props: any) => {
+    const { children } = props;
     return (
-        <h1>Layout</h1>
+        <div style={{ backgroundColor: "salmon" }}>
+            <NavBar/>
+            {children}
+        </div>
     )
 }
+
+export default Layout;
