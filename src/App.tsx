@@ -1,6 +1,7 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from './layout/Layout';
+import Users from './pages/Users';
 import Posts from "./pages/Posts";
 import './App.css';
 
@@ -13,7 +14,12 @@ const router = createBrowserRouter([
   {
     path: "/posts",
     element: <Posts></Posts>
-  }
+  },
+  {
+    path: "/users",
+    element: <Users></Users>
+  },
+
 ]);
 
 

@@ -1,15 +1,18 @@
 {
-    "posts": [
-      { "id": 1, "title": "json-server", "author": "typicode" }
+    "posts": 
+    [
+      { "id": 1, "title": "json-server", "content":"test content", "author": "typicode" }
     ],
-    "users": [
+
+    "users": 
+    [
       { 
-      "id": 1, 
-      "firstName": "Eduard", 
-      "lastName": "Albiol", 
-      "email": "e.albiol@gmail.com", 
-      "userName":"ealbiol", 
-      "password":"1234" 
-    }
+        "id": 1, 
+        "firstName": "Eduard", 
+        "lastName": "Albiol", 
+        "email": "e.albiol@gmail.com", 
+        "userName":"ealbiol", 
+        "password":"1234" 
+      }
     ]
   }

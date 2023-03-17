@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ReactNode } from 'react';
+import React, { useState } from 'react';
 import { navBarItems, entities } from "../db/data";
 
 
@@ -12,11 +12,11 @@ export default function NavBar() {
     }
 
     return (
-        <div  className="flex items-center my-20px mx-15% justify-between">
+        <div className="flex items-center justify-between">
             <div className='font-bold text-lg'>EDUARD ALBIOL CODE.</div>
-            <div className='flex items-center cursor-pointer text-md min-w-60% justify-between'>
+            <div className='flex items-center cursor-pointer text-md min-w-70% justify-between'>
 
-                <div className="flex justify-center space-x-14 ">
+                <div className="flex justify-center space-x-14">
                     {
                         navBarItems.map((item) => {
                             if (item.name === navBarSelected) {
@@ -30,8 +30,7 @@ export default function NavBar() {
                                     )
                                 })
                             }
-                        }
-                        )
+                        })
                     }
                 </div>
                 <div className="flex">
