@@ -18,18 +18,17 @@ module.exports = {
       xxl: ['46px', { lineHeight: 1.2 }],
     },
     minWidth: {
+      '60%':'60%',
       '75%':'75%'
     },
     extend: {
       colors: {
         black: 'black',
-        white: '#ffffff',
         grey: '#615F5B',
         lightGrey: "#8A8370",
       },
       textColor: {
         black: 'black',
-        white: '#ffffff',
         grey: '#615F5B',
         lightGrey: "#8A8370",
       },
@@ -43,6 +42,7 @@ module.exports = {
         "15%": "15%",
         "20%": "20%",
         "10px": "10px",
+        "20px": "20px",
       },
     },
   },

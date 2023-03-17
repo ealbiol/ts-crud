@@ -12,26 +12,16 @@ export default function NavBar() {
     }
 
     return (
-        <div style={{ border: "1px solid black", justifyContent: "space-between" }} className="flex items-center my-10px mx-15%">
-            <div style={{ border: "2px solid green" }} className='font-bold text-lg'>EDUARD ALBIOL CODE</div>
-            <div style={{ border: "3px solid orange", minWidth: "60%", justifyContent: "space-between" }}
-                className='flex items-center cursor-pointer text-md'>
-                <div>
-                    {entities?.map((item, id) => (
-                        <React.Fragment key={id}>
-                            <span
-                                style={{ border: "1px solid blue" }}
-                                className="px-10px"
-                                onClick={handleEntity}>{item.entity}</span>
-                        </React.Fragment>
-                    ))}
-                </div>
-                <div style={{ border: "2px solid red" }} className="flex justify-center space-x-14 ">
+        <div  className="flex items-center my-20px mx-15% justify-between">
+            <div className='font-bold text-lg'>EDUARD ALBIOL CODE.</div>
+            <div className='flex items-center cursor-pointer text-md min-w-60% justify-between'>
+
+                <div className="flex justify-center space-x-14 ">
                     {
                         navBarItems.map((item) => {
                             if (item.name === navBarSelected) {
                                 return item.methods.map((method, id) => {
-                                   return(
+                                    return (
                                         <React.Fragment key={id}>
                                             <span className='text-sm cursor-pointer'>
                                                 {method} {item.label || item.name}
@@ -43,6 +33,17 @@ export default function NavBar() {
                         }
                         )
                     }
+                </div>
+                <div className="flex">
+                    {entities?.map((item, id) => (
+                        <span className="button-black flex justify-center items-center" key={id}>
+                            <span
+                                onClick={handleEntity}>
+                                {item.entity}
+                            </span>
+                            <span className="text-md pl-2">{item.emoji}</span>
+                        </span>
+                    ))}
                 </div>
             </div>
         </div>

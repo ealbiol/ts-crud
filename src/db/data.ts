@@ -5,6 +5,6 @@ export const navBarItems =
     ]
 
 export const entities = [
-    { entity: "Blog" },
-    { entity: "User" }
+    { entity: "Blog", emoji:"📖" },
+    { entity: "User", label: "Users", emoji:"👨‍🦰" }
 ]
