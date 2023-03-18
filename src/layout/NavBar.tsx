@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { navBarItems, entities } from "../db/data";
+import { Link } from 'react-router-dom';
 
 
 export default function NavBar() {

@@ -4,6 +4,7 @@ import { Post } from '../types/Post';
 export default function Posts() {
 
     const [posts, setPosts] = useState<Array<Post>>([])
+    const logoUrl = "https://source.unsplash.com/random"
 
     useEffect(() => {
         (async () => {
@@ -21,17 +22,16 @@ export default function Posts() {
 
     return (
         <div>
-            <h2>Posts List</h2>
-            <div style={{ border: "4px solid black" }} className="my-7% mx-15%">
+            <div className="my-7% mx-15%">
                 {posts?.map((post, id) => (
-                    <div style={{ border: "4px solid red" }} className="flex mb-150px" key={id}>
-                        <div style={{ border: "4px solid green" }} className="min-w-60%">
+                    <div className="flex mb-150px" key={id}>
+                        <div className="min-w-60%">
                             <div className='text-xxl font-black'>{post.title}</div>
                             <div className='mb-40px'>{post.author}</div>
-                            <div style={{border:"4px solid pink"}} className='text-slate-500 text-md max-w-80%'>{post.content}</div>
+                            <div className='text-slate-500 text-md max-w-80%'>{post.content}</div>
                         </div>
-                        <div style={{ border: "4px solid black" }} className="min-w-40%">
-                            IMAGE
+                        <div className="min-w-40%">
+                            <img alt='logo' style={{ minWidth: "100%" }} src={String(logoUrl + "?" + id)} />
                         </div>
                     </div>
                 ))}
