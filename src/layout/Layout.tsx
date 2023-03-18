@@ -5,7 +5,7 @@ const Layout = (props: any) => {
     const { children } = props;
     const {user} = useContext(AuthContext)
     return (
-        <div className='my-20px mx-15%'>
+        <div className='main-margin-page'>
             {user.id && (
                 <NavBar/>
             )}

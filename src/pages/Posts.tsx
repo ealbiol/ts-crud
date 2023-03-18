@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { deletePost, getPosts, postPost } from "../api/post"
 import { Post } from '../types/Post';
-import { Button, Confirm } from "semantic-ui-react";
+import { Confirm } from "semantic-ui-react";
 import BasicModal from '../components/BasicModal';
 import PostForm from '../components/PostForm';
 
@@ -59,31 +59,36 @@ export default function Posts() {
     }
 
     return (
-        <div>
-            <Button primary onClick={onOpenCloseModal}>
+        <div className='main-margin-page mt-5% pb-7%' >
+            <div className='button-black w-52 h-14 mt-40px mb-3%' onClick={onOpenCloseModal}>
                 New Post
-            </Button>
-            <div className="my-7% mx-15%">
+            </div>
+            <div className="my-7% ">
                 {posts?.map((post, id) => (
                     <div className="flex mb-150px" key={id}>
                         <div className="min-w-60%">
-                            <div className='text-xxl font-black'>{post.title}</div>
-                            <div className='mb-40px'>{post.author}</div>
+                            <div className='text-xxl font-black max-w-80%'>{post.title}</div>
+                            <div className='mb-40px'>by {post.author}.</div>
                             <div className='text-slate-500 text-md max-w-80%'>{post.content}</div>
+                            <div className='flex max-w-80% gap-5' >
+                                <div className='button-black w-56 mt-20px h-14' onClick={() => onUpdatePost(post)}>
+                                    Update Post
+                                </div>
+                                <div
+                                    className='button-black w-56 mt-20px'
+                                    onClick={() => {
+                                        setSelectedPost(post);
+                                        setShowConfirm(true);
+                                    }}>
+                                    Delete Post
+                                </div>
+                            </div>
+
                         </div>
-                        <div className="min-w-40%">
-                            <img alt='logo' style={{ minWidth: "100%" }} src={String(logoUrl + "?" + id)} />
+                        <div className="min-w-40% ">
+                            <img alt='logo' className='rounded' style={{ minWidth: "100%" }} src={String(logoUrl + "?" + id)} />
                         </div>
-                        <Button primary onClick={() => onUpdatePost(post)}>
-                            Update Post
-                        </Button>
-                        <Button primary onClick={() => {
-                            setSelectedPost(post);
-                            setShowConfirm(true);
-                        }
-                        }>
-                            Delete Post
-                        </Button>
+
 
                     </div>
                 ))}
