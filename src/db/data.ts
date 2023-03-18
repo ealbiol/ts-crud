@@ -1,11 +1,11 @@
 export const navBarItems =
     [
         { name: "Blog", label: "Post", methods: ["Get", "Create", "Update", "Delete"] },
-        { name: "User", methods: ["Get", "Create", "Update", "Delete"] },
+        { name: "Users", methods: ["Get", "Create", "Update", "Delete"] },
     ]
 
 export const entities =
     [
         { entity: "Blog", emoji: "📖" },
-        { entity: "User", label: "Users", emoji: "👨‍🦰" }
+        { entity: "Users", label: "Users", emoji: "👨‍🦰" }
     ]
