@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+<!--# Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -43,10 +43,12 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To learn React, check out the [React documentation](https://reactjs.org/).-->
 
 
 
+
+# ts-crud app
 
 ## Running project with docker-composer
 Launch the image container with the following command:
@@ -55,15 +57,18 @@ Launch the image container with the following command:
 Use following URL:
 http://localhost:3000
 
+<br/>
+
 ## Running project manually:
 
 You will need two terminals.
-First one:
+<br/><br/>
+First terminal:
 ```
 npm run node-server
 ```
 
-Second one: 
+Second terminal: 
 ```
 npm install
 ```
@@ -71,18 +76,21 @@ npm install
 npm start
 ```
 
+<br/>
+
 
 ## Node server and database created with json-server
-The backend services and Database has been mocked using json-server package. See more info:
+The backend services and Database have been mocked using json-server package.
 Two CRUD elements are availble:
-- Post
-- User
+- Post: Blog of posts
+- User: List of users
 
+<br/>
 
 ## Login 
-Login has been mocked using json-server and some logic that checks the correct user and password. This functionallity is expected to be on the backend but it has been added for testing pourposes.
+The login has been mocked using json-server and some logic that checks the correct user and password. This functionallity is expected to be on the backend but it has been added for testing pourposes.
 
-As an example you can use this credentials.
+As an example you can use the following credentials.
 
 email: ```jsmith@gmail.com```
 
