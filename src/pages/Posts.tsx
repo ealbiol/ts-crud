@@ -13,8 +13,10 @@ export default function Posts() {
         content: "",
         author: ""
     }
-    const [posts, setPosts] = useState<Array<Post>>([])
+
     const logoUrl = "https://source.unsplash.com/random"
+
+    const [posts, setPosts] = useState<Array<Post>>([])
 
     const [showModal, setShowModal] = useState(false);
     const [showConfirm, setShowConfirm] = useState(false);
@@ -28,6 +30,7 @@ export default function Posts() {
         if (showModal) setSelectedPost(initPost);
         setShowModal((prevState => !prevState))
     };
+
     const onOpenCloseConfirm = () => setShowConfirm((prevState) => !prevState);
     const onReload = () => {
         setReload((prevState) => !prevState);
@@ -46,7 +49,8 @@ export default function Posts() {
             }
         })()
 
-    }, [reload])
+    }, [reload]);
+
     const onUpdatePost = (post: Post) => {
         console.log("POST", post);
         setSelectedPost(post);
@@ -59,18 +63,18 @@ export default function Posts() {
     }
 
     return (
-        <div className='main-margin-page mt-5% pb-7%' >
+        <div className='main-margin-page mt-5% pb-7%'>
             <div className='button-black w-52 h-14 mt-40px mb-3%' onClick={onOpenCloseModal}>
                 New Post
             </div>
-            <div className="my-7% ">
+            <div className="my-7%">
                 {posts?.map((post, id) => (
                     <div className="flex mb-150px" key={id}>
                         <div className="min-w-60%">
                             <div className='text-xxl font-black max-w-80%'>{post.title}</div>
                             <div className='mb-40px'>by {post.author}.</div>
                             <div className='text-slate-500 text-md max-w-80%'>{post.content}</div>
-                            <div className='flex max-w-80% gap-5' >
+                            <div className='flex max-w-80% gap-5'>
                                 <div className='button-black w-56 mt-20px h-14' onClick={() => onUpdatePost(post)}>
                                     Update Post
                                 </div>
@@ -83,13 +87,10 @@ export default function Posts() {
                                     Delete Post
                                 </div>
                             </div>
-
                         </div>
                         <div className="min-w-40% ">
                             <img alt='logo' className='rounded' style={{ minWidth: "100%" }} src={String(logoUrl + "?" + id)} />
                         </div>
-
-
                     </div>
                 ))}
             </div>
