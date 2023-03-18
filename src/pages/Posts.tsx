@@ -69,8 +69,10 @@ export default function Posts() {
             </div>
             <div className="my-7%">
                 {posts?.map((post, id) => (
-                    <div className="flex mb-150px" key={id}>
-                        <div className="min-w-60%">
+                    <div style={{ border: "2px solid blue" }}
+                        className="flex mb-150px xs:flex-col xl:flex-row xxl:flex-row" key={id}>
+                        <div style={{ border: "2px solid red" }}
+                            className="sm:min-w-50% md:min-w-50% xs:mb-40px lg:min-w-50% xl:min-w-40% xxl:min-w-60%">
                             <div className='text-xxl font-black max-w-80%'>{post.title}</div>
                             <div className='mb-40px'>by {post.author}.</div>
                             <div className='text-slate-500 text-md max-w-80%'>{post.content}</div>
@@ -88,7 +90,7 @@ export default function Posts() {
                                 </div>
                             </div>
                         </div>
-                        <div className="min-w-40% ">
+                        <div style={{ border: "2px solid pink" }} className="md:min-w-50% lg:min-w-50% xl:min-w-40% xxl:min-w-40% ">
                             <img alt='logo' className='rounded' style={{ minWidth: "100%" }} src={String(logoUrl + "?" + id)} />
                         </div>
                     </div>

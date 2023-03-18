@@ -1,0 +1,8 @@
+# Launch Server
+# Use a Node 16 base image
+FROM node:16-alpine 
+RUN npm install -g json-server
+
+RUN echo '{"posts":[{"title":"Loremipsumdolorsitamet44444","content":"Duisanislnonsapienegestasblandit.Morbitempusvulputatelacusutpulvinar.Pellentesquevitaebibendumsem.Namvitaedoloraliquet,accumsanorcivel,dignissimodio.Maurisaturnalacinia,pharetraurnased,gravidapurus.Praesentpretiumnullatellus.","author":"JakobRosebreeze","id":19},{"title":"Loremipsumdolorsitamet44444","content":"Duisanislnonsapienegestasblandit.Morbitempusvulputatelacusutpulvinar.Pellentesquevitaebibendumsem.Namvitaedoloraliquet,accumsanorcivel,dignissimodio.Maurisaturnalacinia,pharetraurnased,gravidapurus.Praesentpretiumnullatellus.","author":"JakobRosebreeze","id":20},{"title":"Loremipsumdolorsitamet44444","content":"Duisanislnonsapienegestasblandit.Morbitempusvulputatelacusutpulvinar.Pellentesquevitaebibendumsem.Namvitaedoloraliquet,accumsanorcivel,dignissimodio.Maurisaturnalacinia,pharetraurnased,gravidapurus.Praesentpretiumnullatellus.","author":"JakobRosebreeze","id":21}],"users":[{"id":"4","firstName":"John","lastName":"Smith","email":"jsmith@gmail.com","userName":"jsmith","password":"1234"},{"firstName":"dfqw","lastName":"dqw","email":"dqw","userName":"wdq","password":"dwq","id":"ww9YfPa"},{"firstName":"AAA","lastName":"A","email":"A","userName":"A","password":"A","id":"JrUjgYf"},{"firstName":"B","lastName":"B","email":"B","userName":"B","password":"B","id":"TRUSZDf"}]}' > /tmp/test.json
+ENTRYPOINT ["json-server", "--port", "3003", "--host", "0.0.0.0"]
+CMD ["/tmp/test.json"]

@@ -12,11 +12,9 @@ interface IProps {
 export default function PostForm(props: IProps) {
     const { post, onClose, onReload } = props;
     const onSubmit = async (formValue : any) => {
-        console.log("CREATE POST", formValue)
         // Depending if there is ID we update or create
         // We will only have id in case we're updating
         const result = post?.id ? await updatePost(formValue, post.id) : await postPost(formValue);
-        console.log("RESULT", result);
         onClose();
         onReload();
     }

@@ -44,3 +44,46 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+
+
+## Running project with docker-composer
+Launch the image container with the following command:
+```docker-compose up -d --build```
+
+Use following URL:
+http://localhost:3000
+
+## Running project manually:
+
+You will need two terminals.
+First one:
+```
+npm run node-server
+```
+
+Second one: 
+```
+npm install
+```
+```
+npm start
+```
+
+
+## Node server and database created with json-server
+The backend services and Database has been mocked using json-server package. See more info:
+Two CRUD elements are availble:
+- Post
+- User
+
+
+## Login 
+Login has been mocked using json-server and some logic that checks the correct user and password. This functionallity is expected to be on the backend but it has been added for testing pourposes.
+
+As an example you can use this credentials.
+
+email: ```jsmith@gmail.com```
+
+password: ```1234```

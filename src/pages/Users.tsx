@@ -13,7 +13,7 @@ export default function Users() {
     userName: "",
     password: ""
   }
-  const logoUrl = "https://source.unsplash.com/random"
+  const logoUrl = "https://source.unsplash.com/random/?person"
 
   const [users, setUsers] = useState<Array<User>>([]);
 
