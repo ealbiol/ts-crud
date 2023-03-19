@@ -1,38 +1,46 @@
 import AuthContext from '../context/AuthContext';
 import NavBar from './NavBar';
 import { useContext } from 'react';
-import React, { useEffect, useState } from 'react';
-import SwitchThemeButton from '../components/SwitchThemeButton';
+import SwitchModeButton from "../components/SwitchModeButton"
+import React, { useState, useEffect } from 'react';
+import ThemeContext from "../context/ThemeContext";
 
 const Layout = (props: any) => {
     const { children } = props;
     const { user } = useContext(AuthContext)
 
-    //const [theme, setTheme] = useState<any>("light")
+    const [themeData, setThemeData] = useState<any>("")
 
-    //useEffect(() => {
-    //    if (theme === "dark") {
-    //        document.documentElement.classList.add("dark");
-    //    } else {
-    //        document.documentElement.classList.remove("dark");
-    //    }
-    //}, [theme])
+    useEffect(() => {
+        if (localStorage.theme === "dark" || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            setThemeData("dark")
+            document.documentElement.classList.add('dark')
+        } else {
+            setThemeData("light")
+            document.documentElement.classList.remove('dark')
+        }
 
-    //const handleThemeSwitch = () => {
-    //    setTheme(theme === "dark" ? "light" : "dark")
-    //}
+        setThemeData(
+            localStorage?.length !== 0 && localStorage?.theme !== undefined ? localStorage?.theme : (
+                window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light"
+            ))
+    }, [themeData])
 
     return (
-        <div>
-            {/*<button className='bg-green-200 p-4 rounded-3xl' onClick={handleThemeSwitch}>DARK MODE</button>*/}
-            <SwitchThemeButton />
-            <div className='main-margin-page'>
-                {user.id && (
-                    <NavBar />
-                )}
-                {children}
+
+        <ThemeContext.Provider value={themeData} >
+            <div className={themeData}>
+                <div className=''>
+                    <SwitchModeButton themeData={themeData} setThemeData={setThemeData} />
+                    <div className='main-margin-page'>
+                        {user.id && (
+                            <NavBar />
+                        )}
+                        {children}
+                    </div>
+                </div>
             </div>
-        </div>
+        </ThemeContext.Provider >
 
     )
 }

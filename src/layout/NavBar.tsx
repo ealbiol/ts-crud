@@ -3,6 +3,7 @@ import { navBarItems, entities } from "../db/data";
 import { useNavigate } from 'react-router-dom';
 import AuthContext from '../context/AuthContext';
 import { basicUser } from '../utils/BasicUser';
+import useTheme from "../hooks/useTheme";
 
 export default function NavBar() {
     const navigate = useNavigate();
@@ -19,6 +20,11 @@ export default function NavBar() {
         localStorage.clear();
         navigate("/");
     }
+
+    const theme = useTheme();
+    console.log("THEME", theme);
+    
+
 
     return (
         <div>

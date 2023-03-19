@@ -63,11 +63,12 @@ function App() {
   }, [])
 
   return (
-    <AuthContext.Provider value={{ user, setUser }}>
-      <div className='dark:bg-black'>
+    <div className='dark:bg-black'>
+      <AuthContext.Provider value={{ user, setUser }}>
         <RouterProvider router={router} />
-      </div>
-    </AuthContext.Provider>
+      </AuthContext.Provider>
+    </div>
+
   );
 }
 
