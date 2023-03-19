@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { deletePost, getPosts, postPost } from "../api/post"
+import { deletePost, getPosts } from "../api/post"
 import { Post } from '../types/Post';
 import { Confirm } from "semantic-ui-react";
 import BasicModal from '../components/BasicModal';
@@ -8,6 +8,7 @@ import PostForm from '../components/PostForm';
 
 
 export default function Posts() {
+
     const initPost: Post = {
         title: "",
         content: "",
@@ -17,7 +18,6 @@ export default function Posts() {
     const logoUrl = "https://source.unsplash.com/random"
 
     const [posts, setPosts] = useState<Array<Post>>([])
-
     const [showModal, setShowModal] = useState(false);
     const [showConfirm, setShowConfirm] = useState(false);
     const [reload, setReload] = useState(false);
@@ -35,7 +35,6 @@ export default function Posts() {
     const onReload = () => {
         setReload((prevState) => !prevState);
     };
-
 
     useEffect(() => {
         (async () => {
@@ -63,25 +62,22 @@ export default function Posts() {
     }
 
     return (
-        <div className='main-margin-page mt-5% pb-7%'>
-            <div className='button-black w-52 h-14 mt-40px mb-3%' onClick={onOpenCloseModal}>
+        <div className='units-wrapper'>
+            <div className='units-new-unit-button' onClick={onOpenCloseModal}>
                 New Post
             </div>
             <div className="my-7%">
                 {posts?.map((post, id) => (
-                    <div style={{ border: "2px solid blue" }}
-                        className="flex mb-150px xs:flex-col xl:flex-row xxl:flex-row" key={id}>
-                        <div style={{ border: "2px solid red" }}
-                            className="sm:min-w-50% md:min-w-50% xs:mb-40px lg:min-w-50% xl:min-w-40% xxl:min-w-60%">
-                            <div className='text-xxl font-black max-w-80%'>{post.title}</div>
-                            <div className='mb-40px'>by {post.author}.</div>
-                            <div className='text-slate-500 text-md max-w-80%'>{post.content}</div>
-                            <div className='flex max-w-80% gap-5'>
-                                <div className='button-black w-56 mt-20px h-14' onClick={() => onUpdatePost(post)}>
+                    <div className="unit-wrapper" key={id}>
+                        <div className="unit-text">
+                            <div className='unit-text-main'>{post.title}</div>
+                            <div className='unit-text-subtitle'>by {post.author}.</div>
+                            <div className='unit-text-final'>{post.content}</div>
+                            <div className='unit-text-buttons'>
+                                <div className='unit-text-button' onClick={() => onUpdatePost(post)}>
                                     Update Post
                                 </div>
-                                <div
-                                    className='button-black w-56 mt-20px'
+                                <div className='unit-text-button'
                                     onClick={() => {
                                         setSelectedPost(post);
                                         setShowConfirm(true);
@@ -90,8 +86,8 @@ export default function Posts() {
                                 </div>
                             </div>
                         </div>
-                        <div style={{ border: "2px solid pink" }} className="md:min-w-50% lg:min-w-50% xl:min-w-40% xxl:min-w-40% ">
-                            <img alt='logo' className='rounded' style={{ minWidth: "100%" }} src={String(logoUrl + "?" + id)} />
+                        <div className="unit-image-wrapper">
+                            <img alt='logo' className='unit-image' src={String(logoUrl + "?" + id)} />
                         </div>
                     </div>
                 ))}
@@ -116,6 +112,5 @@ export default function Posts() {
                 size="mini"
             />
         </div>
-
     )
 }

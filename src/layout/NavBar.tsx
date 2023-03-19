@@ -23,21 +23,17 @@ export default function NavBar() {
 
     return (
         <div>
-            <div style={{ border: "1px solid pink" }} className="flex items-center justify-between xs:flex-col sm:flex-col md:flex-col lg:flex-col xl:flex-row ">
-                <div className='font-bold xxs:text-lg xs:text-lg sm:text-xl md:text-xl lg:text-xl xl:text-lg xxl:text-lg'>EDUARD ALBIOL CODE.</div>
-                <div
-                    style={{ border: "4px solid black" }}
-                    className='flex items-center text-md xxl:min-w-70% justify-between xl:items-end xxl:items-center xxs:flex-col xs:flex-col sm:flex-col md:flex-col lg:flex-col xl:flex-col xxl:flex-row'
-                >
-                    <div style={{ border: "1px solid red" }}
-                        className="flex xxs:flex-col sm:flex-row justify-center xxs:space-x-0 sm:space-x-12 xl:mx-0 xxl:mx-20px">
+            <div className="navBar-wrapper">
+                <div className='navBar-logo'>EDUARD ALBIOL CODE.</div>
+                <div className='navBar-items-and-entities'>
+                    <div className="navBar-items">
                         {
                             navBarItems.map((item) => {
                                 if (item.name === navBarSelected) {
                                     return item.methods.map((method, id) => {
                                         return (
                                             <React.Fragment key={id}>
-                                                <span className='text-sm '>
+                                                <span className='navBar-item'>
                                                     {method} {item.label || item.name}
                                                 </span>
                                             </React.Fragment>
@@ -47,20 +43,19 @@ export default function NavBar() {
                             })
                         }
                     </div>
-                    <div style={{ border: "1px solid blue" }}
-                        className="flex  xxs:flex-col xxs:items-center xxs:min-w-500px sm:flex-row xxs:mt-20px justify-between xl:mt-20px xxl:mt-0">
+                    <div className="navBar-entities">
                         {entities?.map((item, id) => (
-                            <button style={{ border: "2px solid brown" }} className="button-black xxs:mb-10px sm:mb-0" key={id}>
+                            <div className="button-black ml-10px xxs:mb-10px md:mb-0" key={id}>
                                 <span
                                     onClick={handleEntity}>
                                     {item.entity}
                                 </span>
                                 <span className="text-md">{item.emoji}</span>
-                            </button>
+                            </div>
                         ))}
-                        <div style={{ border: "2px solid brown" }} className="button-black xxs:mb-10px sm:mb-0" onClick={handleLogout}>
+                        <div className="button-black xxs:mb-10px sm:mb-0 ml-10px" onClick={handleLogout}>
                             Logout
-                            <span className="text-md ">👋</span>
+                            <span className="text-md">👋</span>
                         </div>
                     </div>
                 </div>

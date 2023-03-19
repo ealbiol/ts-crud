@@ -11,14 +11,83 @@
   }
 
   @layer components {
+
     .button-black {
-        @apply text-white bg-black px-10px rounded-full py-2 px-12 text-sm cursor-pointer flex justify-center items-center
-        xxs:min-w-200px sm:min-w-100px ml-10px
-        ;
+        @apply text-white bg-black px-10px rounded-full py-2 px-12 text-sm cursor-pointer flex justify-center items-center xxs:min-w-200px sm:min-w-200px;
     }
 
     .main-margin-page {
       @apply my-20px xxs:mx-7% xs:mx-7% sm:mx-7% md:mx-7% lg:mx-15% xl:mx-15% xxl:mx-15%;
+    }
+
+
+    .navBar-wrapper {
+      @apply flex items-center justify-between xs:flex-col sm:flex-col md:flex-col lg:flex-col xl:flex-row;
+    }
+    
+    .navBar-logo {
+      @apply font-bold xxs:text-lg xs:text-lg sm:text-xl md:text-xl lg:text-xl xl:text-lg xxl:text-lg;
+    }
+
+    .navBar-items-and-entities {
+      @apply flex items-center text-md xxl:min-w-70% justify-between xl:items-end xxl:items-center xxs:flex-col xs:flex-col sm:flex-col md:flex-col lg:flex-col xl:flex-col xxl:flex-row xxs:max-w-100%;
+    }
+
+    .navBar-items {
+      @apply flex xxs:mt-20px md:mt-0 xxs:items-center xxs:flex-col sm:flex-row justify-center xxs:space-x-0 sm:space-x-12 xl:mx-0 xxl:mx-20px;
+    }
+    
+    .navBar-item {
+      @apply xxs:text-sm xxs:mb-10px sm:mb-0;
+    }
+
+    .navBar-entities {
+      @apply flex xxs:flex-col xxs:items-center  sm:flex-col md:flex-row xxs:mt-20px justify-between xl:mt-20px xxl:mt-0;
+    }
+
+
+    .units-wrapper {
+      @apply main-margin-page mt-5% pb-7%;
+    }
+
+    .units-new-unit-button {
+      @apply button-black w-52 h-14 mt-40px mb-3%;
+    }
+
+    .unit-wrapper {
+      @apply flex mb-150px xs:flex-col xl:flex-row xxl:flex-row;
+    }
+
+    .unit-text {
+      @apply sm:min-w-50% md:min-w-50% xs:mb-40px lg:min-w-50% xl:min-w-40% xxl:min-w-60%;
+    }
+
+    .unit-text-main {
+      @apply text-xxl font-black max-w-80% xxs:max-w-100% xl:max-w-80%;
+    }
+
+    .unit-text-subtitle {
+      @apply mb-40px;
+    }
+
+    .unit-text-final {
+      @apply text-slate-500 text-md xxs:max-w-100% xl:max-w-80%;
+    }
+
+    .unit-text-buttons {
+      @apply flex xxs:flex-col xxs:items-center sm:flex-row max-w-90% gap-5;
+    }
+
+    .unit-text-button {
+      @apply button-black w-56 sm:mt-20px h-14 xxs:mt-20px;
+    }
+
+    .unit-image-wrapper {
+      @apply md:min-w-50% lg:min-w-50% xl:min-w-40% xxl:min-w-40%;
+    }
+
+    .unit-image {
+      @apply rounded;
     }
   }
   

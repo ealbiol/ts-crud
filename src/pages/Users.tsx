@@ -6,6 +6,7 @@ import BasicModal from '../components/BasicModal';
 import UserForm from '../components/UserForm';
 
 export default function Users() {
+
   const initUser: User = {
     firstName: "",
     lastName: "",
@@ -16,12 +17,9 @@ export default function Users() {
   const logoUrl = "https://source.unsplash.com/random/?person"
 
   const [users, setUsers] = useState<Array<User>>([]);
-
   const [showModal, setShowModal] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const [reload, setReload] = useState(false);
-
-
   const [selectedUser, setSelectedUser] = useState<User>(initUser)
 
   const onOpenCloseModal = () => {
@@ -30,6 +28,7 @@ export default function Users() {
   };
 
   const onOpenCloseConfirm = () => setShowConfirm((prevState) => !prevState);
+
   const onReload = () => {
     setReload((prevState) => !prevState);
   };
@@ -42,7 +41,6 @@ export default function Users() {
         console.log("users", response);
         setUsers(users)
       } catch (error) {
-
       }
     })()
   }, [reload])
@@ -52,7 +50,6 @@ export default function Users() {
     setSelectedUser(user);
     onOpenCloseModal();
   }
-
   const onDeleteUser = (id: number) => {
     deleteUser(id);
     onOpenCloseConfirm();
@@ -60,23 +57,22 @@ export default function Users() {
   }
 
   return (
-    <div className='main-margin-page mt-5% pb-7%'>
-      <div className='button-black w-52 h-14 mt-40px mb-3%' onClick={onOpenCloseModal}>
+    <div className='units-wrapper'>
+      <div className='units-new-unit-button' onClick={onOpenCloseModal}>
         New User
       </div>
       <div className="my-7%">
         {users.map((user, id) => (
-          <div className="flex mb-150px" key={id}>
-            <div className="min-w-60%">
-              <div className='text-xxl font-black max-w-80%'>{user.firstName} {user.lastName}</div>
-              <div className='mb-40px'>{user.email}</div>
-              <div className='text-slate-500 text-md max-w-80%'>Nickname: {user.userName}</div>
-              <div className='flex max-w-80% gap-5'>
-                <div className='button-black w-56 mt-20px h-14' onClick={() => onUpdateUser(user)}>
+          <div className="unit-wrapper" key={id}>
+            <div className="unit-text">
+              <div className='unit-text-main'>{user.firstName} {user.lastName}</div>
+              <div className='unit-text'>{user.email}</div>
+              <div className='unit-text-final'>Nickname: {user.userName}</div>
+              <div className='unit-text-buttons'>
+                <div className='unit-text-button' onClick={() => onUpdateUser(user)}>
                   Update User
                 </div>
-                <div
-                  className='button-black w-56 mt-20px'
+                <div className='unit-text-button'
                   onClick={() => {
                     setSelectedUser(user);
                     setShowConfirm(true);
@@ -85,8 +81,8 @@ export default function Users() {
                 </div>
               </div>
             </div>
-            <div className="min-w-40% ">
-              <img alt='logo' className='rounded' style={{ minWidth: "100%" }} src={String(logoUrl + "?" + id)} />
+            <div className="unit-image-wrapper">
+              <img alt='logo' className='unit-image' src={String(logoUrl + "?" + id)} />
             </div>
           </div>
         ))}
