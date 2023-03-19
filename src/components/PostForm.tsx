@@ -45,7 +45,6 @@ export default function PostForm(props: IProps) {
                 value={formik.values.content}
                 error={formik.errors.content}
                 rows={5}
-                autoHeight
             />
             <Form.Input
                 name="author"
