@@ -1,9 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-
+  darkMode: 'class',
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+    "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     fontFamily: {
       'montserrat': ['Montserrat'],
@@ -32,18 +31,6 @@ module.exports = {
       '200px': '200px',
       '500px': '500px',
     },
-    //maxHeight: {
-    //  '20%': '20%',
-    //  '30%': '30%',
-    //  '40%': '40%',
-    //  '50%': '50%',
-    //  '60%': '60%',
-    //  '70%': '70%',
-    //  '75%': '75%',
-    //  '80%': '80%',      
-    //  '90%': '90%',
-    //  '500px': '500px',
-    //},
     screens: {
       'xxs': '200px',
       // => @media (min-width: 200px) { ... }

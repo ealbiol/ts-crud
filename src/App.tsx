@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from './layout/Layout';
 import Users from './pages/Users';
@@ -52,19 +52,21 @@ const router = createBrowserRouter([
 
 function App() {
   // Fill the context 'user'.
-  const [user, setUser] = useState<User>(basicUser  )
+  const [user, setUser] = useState<User>(basicUser)
   useEffect(() => {
     const userStg = localStorage.getItem("user");
     const user = userStg ? JSON.parse(userStg) : undefined;
     console.log("INSIDE APP ", user);
-    if (user){
+    if (user) {
       setUser(user);
     }
   }, [])
 
   return (
     <AuthContext.Provider value={{ user, setUser }}>
-      <RouterProvider router={router} />
+      <div className='dark:bg-black'>
+        <RouterProvider router={router} />
+      </div>
     </AuthContext.Provider>
   );
 }
