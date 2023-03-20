@@ -1,4 +1,3 @@
-import React from 'react'
 import { useFormik } from "formik";
 import { Form } from 'semantic-ui-react';
 import { Post } from '../types/Post';

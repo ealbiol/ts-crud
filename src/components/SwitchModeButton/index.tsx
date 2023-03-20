@@ -15,38 +15,13 @@ export default function SwitchModeButton({ themeData, setThemeData }: SwitchMode
     }
 
     return (
-        <div>
-            {/*<input
+        <label className="switch">
+            <input
                 type="checkbox"
-                className="checkbox"
-                aria-label="Dark Mode checkbox"
                 onChange={handleSwitch}
                 checked={(themeData === "dark" ? true : false)}
-                style={{
-                    position: "relative",
-                    appearance: "none",
-                    width: "70px",
-                    height: "30px",
-                    borderRadius: "20px",
-                    backgroundColor: themeData === "dark" ? "red" : "#6E6E6E",
-                    marginRight: "10px",
-                    cursor: "pointer",
-                    transition: "background-color 0.3s",
-                    WebkitTapHighlightColor: "transparent",
-                }}
             />
-            <span>{themeData === "dark" ? <span className='dark:text-white'>Dark</span> : <span>Light</span>}</span>*/}
-
-
-            <label className="switch">
-                <input 
-                type="checkbox" 
-                onChange={handleSwitch}
-                checked={(themeData === "dark" ? true : false)}
-                />
-                <span className="slider round"></span>
-            </label>
-
-        </div>
+            <span className="slider round"></span>
+        </label>
     )
 }

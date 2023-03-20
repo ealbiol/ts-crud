@@ -3,7 +3,6 @@ import { navBarItems, entities } from "../db/data";
 import { useNavigate } from 'react-router-dom';
 import AuthContext from '../context/AuthContext';
 import { basicUser } from '../utils/BasicUser';
-import useTheme from "../hooks/useTheme";
 import SwitchModeButton from '../components/SwitchModeButton/index';
 
 type NavBarProps = {
@@ -27,10 +26,6 @@ export default function NavBar(props: NavBarProps) {
         localStorage.clear();
         navigate("/");
     }
-
-    const theme = useTheme();
-    console.log("THEME", theme);
-
 
 
     return (

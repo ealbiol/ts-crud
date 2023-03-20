@@ -23,9 +23,7 @@ export default function Posts() {
     const [reload, setReload] = useState(false);
 
     const [selectedPost, setSelectedPost] = useState<Post>(initPost)
-    /**
-     * In onOpenCloseModal: When closing modal values are cleaned.
-     */
+
     const onOpenCloseModal = () => {
         if (showModal) setSelectedPost(initPost);
         setShowModal((prevState => !prevState))
@@ -41,7 +39,6 @@ export default function Posts() {
             try {
                 const response = await getPosts();
                 const posts: Array<Post> = response;
-                console.log("post", response);
                 setPosts(posts)
             } catch (error) {
 
@@ -51,7 +48,6 @@ export default function Posts() {
     }, [reload]);
 
     const onUpdatePost = (post: Post) => {
-        console.log("POST", post);
         setSelectedPost(post);
         onOpenCloseModal();
     }

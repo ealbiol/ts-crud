@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Form, Message } from "semantic-ui-react";
 import { useFormik } from "formik";
-
 import { login } from '../api/login';
 import { Response } from '../types/Response';
 import AuthContext from '../context/AuthContext';
@@ -16,7 +15,6 @@ export default function Login() {
     const { user, setUser } = useContext(AuthContext);
 
     const onSubmit = async (formValue: any) => {
-        console.log("Form", formValue)
         const result: Response = await login(formValue);
         if (result.status === 200 && result.foundUser) {
             setUser(result.foundUser);
@@ -26,7 +24,6 @@ export default function Login() {
             setVisibleMessage(true);
             handleDismiss();
         }
-        console.log("Result", result)
     }
 
     const formik = useFormik({

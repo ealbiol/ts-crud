@@ -5,9 +5,7 @@ import Users from './pages/Users';
 import Posts from "./pages/Posts";
 import './App.css';
 import 'semantic-ui-css/semantic.min.css'
-import {
-  Outlet
-} from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import Login from './pages/Login';
 import AuthContext from './context/AuthContext';
 import { User } from './types/User';
@@ -23,7 +21,6 @@ const LayoutWrapper = () => {
     </div>
   )
 }
-
 
 const router = createBrowserRouter([
   {

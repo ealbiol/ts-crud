@@ -38,7 +38,6 @@ export default function Users() {
       try {
         const response = await getUsers();
         const users: Array<User> = response;
-        console.log("users", response);
         setUsers(users)
       } catch (error) {
       }
@@ -46,7 +45,6 @@ export default function Users() {
   }, [reload])
 
   const onUpdateUser = (user: User) => {
-    console.log("USER", user);
     setSelectedUser(user);
     onOpenCloseModal();
   }

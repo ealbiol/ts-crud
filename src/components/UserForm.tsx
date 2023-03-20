@@ -13,11 +13,9 @@ interface IProps {
 export default function UserForm(props: IProps) {
     const { user, onClose, onReload } = props;
     const onSubmit = async (formValue : any) => {
-        console.log("CREATE USER", formValue)
         // Depending if there is ID we update or create
         // We will only have id in case we're updating
         const result = user?.id ? await updateUser(formValue, user.id) : await postUser(formValue);
-        console.log("RESULT", result);
         onClose();
         onReload();
     }
