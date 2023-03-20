@@ -14,7 +14,7 @@ export default function UserForm(props: IProps) {
     const onSubmit = async (formValue : any) => {
         // Depending if there is ID we update or create
         // We will only have id in case we're updating
-        const result = user?.id ? await updateUser(formValue, user.id) : await postUser(formValue);
+        user?.id ? await updateUser(formValue, user.id) : await postUser(formValue);
         onClose();
         onReload();
     }

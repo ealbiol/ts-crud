@@ -15,7 +15,7 @@ export default function PostForm(props: IProps) {
     const onSubmit = async (formValue: any) => {
         // Depending if there is ID we update or create
         // We will only have id in case we're updating
-        const result = post?.id ? await updatePost(formValue, post.id) : await postPost(formValue);
+        post?.id ? await updatePost(formValue, post.id) : await postPost(formValue);
         onClose();
         onReload();
     }
