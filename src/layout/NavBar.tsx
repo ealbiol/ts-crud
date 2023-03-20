@@ -47,8 +47,10 @@ export default function NavBar(props: NavBarProps) {
                                         )
                                     })
                                 }
+                                return ""; 
                             })
                         }
+
                     </div>
                     <div className="navBar-entities">
                         {entities?.map((item, id) => (
