@@ -4,8 +4,15 @@ import { useNavigate } from 'react-router-dom';
 import AuthContext from '../context/AuthContext';
 import { basicUser } from '../utils/BasicUser';
 import useTheme from "../hooks/useTheme";
+import SwitchModeButton from '../components/SwitchModeButton/index';
 
-export default function NavBar() {
+type NavBarProps = {
+    themeData: string;
+    setThemeData: React.Dispatch<React.SetStateAction<string>>;
+};
+
+
+export default function NavBar(props: NavBarProps) {
     const navigate = useNavigate();
     const [navBarSelected, setNavBarSelected] = useState<string>("Blog");
     const { user, setUser } = useContext(AuthContext)
@@ -23,7 +30,7 @@ export default function NavBar() {
 
     const theme = useTheme();
     console.log("THEME", theme);
-    
+
 
 
     return (
@@ -53,7 +60,8 @@ export default function NavBar() {
                             <div className="button-black ml-10px xxs:mb-10px md:mb-0" key={id}>
                                 <span
                                     className='dark:text-black'
-                                    onClick={handleEntity}>
+                                    onClick={handleEntity}
+                                >
                                     {item.entity}
                                 </span>
                                 <span className="text-md">{item.emoji}</span>
@@ -68,6 +76,9 @@ export default function NavBar() {
             </div>
             <div>
                 <div className='mt-20px dark:text-white'>Welcome back, {user.firstName}.</div>
+                <div className='mt-20px'>
+                    <SwitchModeButton themeData={props.themeData} setThemeData={props.setThemeData} />
+                </div>
             </div>
         </div>
     )

@@ -66,6 +66,7 @@ export default function Posts() {
             <div className='units-new-unit-button' onClick={onOpenCloseModal}>
                 New Post
             </div>
+
             <div className="my-7%">
                 {posts?.map((post, id) => (
                     <div className="unit-wrapper" key={id}>

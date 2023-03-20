@@ -17,7 +17,7 @@ import { basicUser } from './utils/BasicUser';
 
 const LayoutWrapper = () => {
   return (
-    <div>
+    <div className='border-1'>
       <Layout />
       <Outlet />
     </div>
@@ -56,7 +56,6 @@ function App() {
   useEffect(() => {
     const userStg = localStorage.getItem("user");
     const user = userStg ? JSON.parse(userStg) : undefined;
-    console.log("INSIDE APP ", user);
     if (user) {
       setUser(user);
     }

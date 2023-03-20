@@ -1,9 +1,9 @@
 import AuthContext from '../context/AuthContext';
 import NavBar from './NavBar';
 import { useContext } from 'react';
-import SwitchModeButton from "../components/SwitchModeButton"
 import React, { useState, useEffect } from 'react';
 import ThemeContext from "../context/ThemeContext";
+
 
 const Layout = (props: any) => {
     const { children } = props;
@@ -27,21 +27,18 @@ const Layout = (props: any) => {
     }, [themeData])
 
     return (
-
         <ThemeContext.Provider value={themeData} >
-            <div className={themeData}>
-                <div className=''>
-                    <SwitchModeButton themeData={themeData} setThemeData={setThemeData} />
+            <div>
+                <div>
                     <div className='main-margin-page'>
                         {user.id && (
-                            <NavBar />
+                            <NavBar themeData={themeData} setThemeData={setThemeData} />
                         )}
                         {children}
                     </div>
                 </div>
             </div>
         </ThemeContext.Provider >
-
     )
 }
 

@@ -45,6 +45,9 @@
       @apply flex xxs:flex-col xxs:items-center  sm:flex-col md:flex-row xxs:mt-20px justify-between xl:mt-20px xxl:mt-0;
     }
 
+    .border-1 {
+      @apply border border-transparent;
+    }
 
     .units-wrapper {
       @apply main-margin-page mt-5% pb-7%;
