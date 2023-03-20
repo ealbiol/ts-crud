@@ -47,7 +47,7 @@ export default function Login() {
     }, [user, navigate]);
 
     return (
-        <div style={{border:"1px solid red", marginTop:"50px", marginBottom:"50px"}}>
+        <div className='my-14'>
             <div className='navBar-logo mb-20px'>EDUARD ALBIOL CODE.</div>
             <div>
                 {visibleMessage &&
