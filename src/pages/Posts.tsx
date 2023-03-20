@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { deletePost, getPosts } from "../api/post"
 import { Post } from '../types/Post';
 import { Confirm } from "semantic-ui-react";

@@ -1,7 +1,7 @@
 import AuthContext from '../context/AuthContext';
 import NavBar from './NavBar';
 import { useContext } from 'react';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import ThemeContext from "../context/ThemeContext";
 
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { getUsers, deleteUser } from '../api/user';
 import { User } from '../types/User';
 import { Confirm } from "semantic-ui-react";
