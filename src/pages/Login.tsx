@@ -47,36 +47,40 @@ export default function Login() {
     }, [user, navigate]);
 
     return (
-        <div>
-            {visibleMessage &&
-                (
-                    <Message onDismiss={() => setVisibleMessage(false)} >
-                        <Message.Header>Status code: {errorMessage.status}</Message.Header>
-                        <p>
-                            {errorMessage.desc}
-                        </p>
-                    </Message>
-                )}
-            <Form onSubmit={formik.handleSubmit}>
-                <Form.Input
-                    name="email"
-                    placeholder="Email Address"
-                    onChange={formik.handleChange}
-                    value={formik.values.email}
-                    error={formik.errors.email}
-                />
-                <Form.Input
-                    name="password"
-                    type="password"
-                    placeholder="Password"
-                    onChange={formik.handleChange}
-                    value={formik.values.password}
-                    error={formik.errors.password}
-                />
-                <Form.Button type="submit" primary fluid loading={formik.isSubmitting}>
-                    Enter
-                </Form.Button>
-            </Form>
+        <div style={{border:"1px solid red", marginTop:"50px", marginBottom:"50px"}}>
+            <div className='navBar-logo mb-20px'>EDUARD ALBIOL CODE.</div>
+            <div>
+                {visibleMessage &&
+                    (
+                        <Message onDismiss={() => setVisibleMessage(false)} >
+                            <Message.Header>Status code: {errorMessage.status}</Message.Header>
+                            <p>
+                                {errorMessage.desc}
+                            </p>
+                        </Message>
+                    )
+                }
+                <Form onSubmit={formik.handleSubmit}>
+                    <Form.Input
+                        name="email"
+                        placeholder="Email Address"
+                        onChange={formik.handleChange}
+                        value={formik.values.email}
+                        error={formik.errors.email}
+                    />
+                    <Form.Input
+                        name="password"
+                        type="password"
+                        placeholder="Password"
+                        onChange={formik.handleChange}
+                        value={formik.values.password}
+                        error={formik.errors.password}
+                    />
+                    <Form.Button type="submit" primary fluid loading={formik.isSubmitting}>
+                        Enter
+                    </Form.Button>
+                </Form>
+            </div>
         </div>
     )
 }

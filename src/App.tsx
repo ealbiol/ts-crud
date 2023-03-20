@@ -59,7 +59,7 @@ function App() {
   }, [])
 
   return (
-    <div className='dark:bg-black'>
+    <div className='dark:bg-black flex flex-col items-center min-h-screen'>
       <AuthContext.Provider value={{ user, setUser }}>
         <RouterProvider router={router} />
       </AuthContext.Provider>
